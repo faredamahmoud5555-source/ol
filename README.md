@@ -1,3 +1,4 @@
+
 # AELIA — Luxury Fragrance E‑Commerce
 
 An original, ultra-minimal luxury perfume storefront (brand, copy, and
@@ -100,3 +101,4 @@ prisma/
   product photos.
 - Brand name, product names, and all copy (philosophy, journal posts,
   ingredient sourcing notes) are original.
+
