@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Heart, Search, ShoppingBag, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { products } from "@/lib/data";
 import { useStore } from "@/lib/store";
+
+
 
 const NAV = [
   { href: "/collection", label: "Collection" },
@@ -15,8 +18,13 @@ const NAV = [
 ];
 
 export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+
+const [scrolled, setScrolled] = useState(false);
+
+const [searchOpen, setSearchOpen] = useState(false);
+const [query, setQuery] = useState("");
+
+const pathname = usePathname();
   const { cartCount } = useStore();
   const isHero = transparent && pathname === "/";
 
@@ -28,6 +36,22 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
   }, []);
 
   const dark = isHero && !scrolled;
+const results = useMemo(() => {
+  if (!query.trim()) return [];
+
+  const q = query.toLowerCase();
+
+  return products
+    .filter((p) => p.name.toLowerCase().includes(q))
+    .slice(0, 6);
+}, [query]);
+
+
+
+
+
+
+
 
   return (
     <header
@@ -63,7 +87,11 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
         </nav>
 
         <div className={cn("flex items-center gap-5", dark ? "text-bone" : "text-ink")}>
-          <button aria-label="Search" className="hover:text-brass transition-colors">
+          <button
+  aria-label="Search"
+  onClick={() => setSearchOpen(true)}
+  className="hover:text-brass transition-colors"
+>
             <Search size={18} strokeWidth={1.4} />
           </button>
           <Link href="/wishlist" aria-label="Wishlist" className="hover:text-brass transition-colors">
@@ -82,6 +110,70 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           </Link>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+{searchOpen && (
+  <div
+    className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-32"
+    onClick={() => {
+      setSearchOpen(false);
+      setQuery("");
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-full max-w-2xl rounded-2xl bg-white p-6 shadow-2xl"
+    >
+      <input
+        autoFocus
+        type="text"
+        placeholder="Search fragrances..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full border-b border-gray-300 pb-3 text-2xl outline-none"
+      />
+
+      <div className="mt-6 max-h-96 overflow-y-auto">
+        {results.length === 0 ? (
+          <p className="text-gray-500">No products found.</p>
+        ) : (
+          results.map((product) => (
+            <Link
+              key={product.id}
+              href={`/product/${product.slug}`}
+              onClick={() => {
+                setSearchOpen(false);
+                setQuery("");
+              }}
+              className="flex items-center justify-between rounded-lg p-4 transition hover:bg-gray-100"
+            >
+              <div>
+                <h3 className="font-semibold">{product.name}</h3>
+                <p className="text-sm text-gray-500">{product.family}</p>
+              </div>
+
+              <span>${product.price}</span>
+            </Link>
+          ))
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
+
+
     </header>
   );
 }
