@@ -1,10 +1,12 @@
 import { Hero } from "@/components/hero";
+import Image from "next/image";
 import { ProductSection } from "@/components/product-section";
 import { PhilosophySection } from "@/components/philosophy-section";
 import { IngredientsShowcase } from "@/components/ingredients-showcase";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { NewsletterSection } from "@/components/newsletter-section";
 import { products } from "@/lib/data";
+
 
 export default function HomePage() {
   const featured = products.filter((p) => p.featured).slice(0, 4);

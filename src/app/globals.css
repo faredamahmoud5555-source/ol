@@ -5,21 +5,37 @@
    Palette: bone / cream / ink / espresso / brass / clay
    --------------------------------------------------------- */
 :root {
-  --bone: #f7f4ee;
-  --cream: #ece3d3;
-  --ink: #15120e;
-  --espresso: #2b2119;
-  --charcoal: #211c17;
-  --brass: #a8895a;
-  --brass-soft: #c9b190;
-  --clay: #8a6a4f;
-  --line: rgba(21, 18, 14, 0.12);
-  --line-inverse: rgba(247, 244, 238, 0.16);
+  /* Backgrounds */
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f3f5f7;
+  --surface-3: #eceff2;
 
-  --background: var(--bone);
-  --foreground: var(--ink);
+  /* Text */
+  --foreground: #111111;
+  --text-soft: #555555;
+  --text-light: #8d9399;
+
+  /* Ocean Accent */
+  --ocean: #0e5f73;
+  --ocean-light: #4c8ea3;
+  --deep-ocean: #0b2e39;
+
+  /* Borders */
+  --line: rgba(0,0,0,.08);
+  --line-strong: rgba(0,0,0,.15);
+
+  --bone: var(--surface);
+  --cream: var(--surface-2);
+
+  --ink: #111111;
+  --espresso: #1b1b1b;
+  --charcoal: #2c2c2c;
+
+  --brass: var(--ocean);
+  --brass-soft: var(--ocean-light);
+  --clay: var(--text-light);
 }
-
 @theme inline {
   --color-bone: var(--bone);
   --color-cream: var(--cream);
@@ -58,12 +74,14 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: var(--bone);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+body{
+    background:var(--background);
+    color:var(--foreground);
+    font-family:var(--font-sans);
 }
+
+
+
 
 ::selection {
   background: var(--brass);
@@ -105,7 +123,9 @@ body {
 
 /* Custom scrollbar, subtle */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bone); }
+::-webkit-scrollbar-track{
+    background:#050505;
+}
 ::-webkit-scrollbar-thumb { background: var(--brass-soft); border-radius: 0; }
 
 .container-edit {

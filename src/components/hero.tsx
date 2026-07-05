@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+import Image from "next/image";
+
+
+
 import { Magnetic } from "@/components/magnetic";
 
 export function Hero() {
@@ -57,26 +62,61 @@ export function Hero() {
           </motion.h1>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.9 }}
-          className="mt-10 flex flex-col items-start justify-between gap-8 border-t border-bone/15 pt-8 sm:flex-row sm:items-end"
-        >
-          <p className="max-w-md text-sm leading-relaxed text-bone/65">
-            Each composition is built in small batches by a single perfumer,
-            revised over months rather than launched to a season. No
-            campaigns. No limited editions — only the work.
-          </p>
-          <Magnetic>
-            <Link
-              href="/collection"
-              className="text-eyebrow inline-flex h-14 items-center border border-bone/40 px-9 text-bone transition-colors hover:border-bone hover:bg-bone hover:text-ink"
-            >
-              Enter the Collection
-            </Link>
-          </Magnetic>
-        </motion.div>
+<motion.div
+  className="absolute right-10 top-1/2 -translate-y-1/2 z-30 hidden lg:block"
+  initial={{
+    opacity: 0,
+    scale: 0.9,
+    x: 100,
+  }}
+  animate={{
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    y: [0, -15, 0],
+    rotate: [0, -1, 1, 0],
+  }}
+  transition={{
+    opacity: { duration: 1.2, delay: 0.5 },
+    scale: { duration: 1.2, delay: 0.5 },
+    x: { duration: 1.2, delay: 0.5 },
+    y: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+    rotate: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+>
+  {/* Glow */}
+  <div className="absolute left-1/2 top-1/2 -z-10 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[140px]" />
+
+  
+  
+</motion.div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
       </div>
 
       <motion.div

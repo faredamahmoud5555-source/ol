@@ -3,6 +3,7 @@ export type Note = { name: string; latin?: string };
 export type Product = {
   id: string;
   slug: string;
+
   name: string;
   family: "Woody" | "Amber" | "Floral" | "Citrus" | "Musk" | "Green";
   concentration: "Eau de Parfum" | "Extrait de Parfum";
@@ -23,56 +24,80 @@ export type Product = {
   new?: boolean;
   rating: number;
   reviewCount: number;
+  image: string;
+  smellmap:string [];
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 export const products: Product[] = [
   {
     id: "1",
     slug: "smoked-fig",
-    name: "Smoked Fig",
+    name: "Tuscan Leather Eau de Parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
     price: 24500,
     size: "50ml",
     accent: "#6b4a34",
-    tagline: "A quiet fire beneath green fig leaf.",
+    tagline: "A sophisticated scent of extravagant leather and warm spice.",
     description:
-      "An introspective woody gourmand built around fig leaf and a low, tarry smoke — the smell of a hearth long after the flame has gone out.",
+      "Tuscan Leather is supple and extravagant. Deep and animalistic, night-blooming jasmine and black suede bring a distinctive texture that is raw yet refined.",
     story:
-      "Composed in a single week during an unusually cold October, Smoked Fig began as an attempt to bottle the moment firewood catches. The perfumer paired green fig accord with birch tar and a whisper of cade, then softened the whole structure with a milky sandalwood base so the smoke never turns bitter.",
+      "Composed in a single week during an unusually cold October, Tuscan Leather began as an attempt to bottle the moment firewood catches. The perfumer paired Tuscan Leather accord with birch tar and a whisper of cade, then softened the whole structure with a milky sandalwood base so the smoke never turns bitter.",
     notes: {
-      top: [{ name: "Green Fig Leaf" }, { name: "Bergamot", latin: "Citrus bergamia" }],
-      heart: [{ name: "Birch Tar" }, { name: "Fig Accord" }, { name: "Cade Oil" }],
-      base: [{ name: "Sandalwood", latin: "Santalum album" }, { name: "Cashmeran" }, { name: "White Musk" }],
+      top: [{ name: "Saffron" }, { name: "Raspberry"},{name: "Thyme"}],
+      heart: [{ name: "Olibanum" }, { name: "Night Blooming Jasmine" }, { name: "Leather" }],
+      base: [{ name: "Black Suede" }, { name: "Amberwood" }],
+    
     },
     longevity: 4,
     sillage: 3,
     season: ["Autumn", "Winter"],
     occasion: ["Evening", "Everyday"],
-    ingredients: ["Fig Leaf Absolute", "Birch Tar", "Sandalwood", "Cashmeran", "Bergamot", "Cade Oil"],
+    ingredients: ["Ingredients: Alcohol Denat., Fragrance (parfum), Water Aqua Eau, Hexamethylindanopyran, Linalool, Limonene, Methyl 2-octynoate, Vanillin, Linalyl Acetate, Sclareol, Pinene, Hexadecanolactone, Rose Ketones, Beta-caryophyllene, Alpha Terpinene, Terpineol, Tetramethyl Acetyloctahydronaphthalenes"],
     bestseller: true,
     featured: true,
     rating: 4.8,
     reviewCount: 312,
+
+    image: "/tuscan.jpg",
+    smellmap:["/tuscan.jpg"]
+    
+
   },
   {
     id: "2",
-    slug: "salt-cedar",
-    name: "Salt Cedar",
-    family: "Green",
+    slug: "oud-wood-eau-de-parfum",
+    name: "Oud Wood",
+    family: "Woody",
     concentration: "Eau de Parfum",
     price: 22000,
     size: "50ml",
     accent: "#5c6d5e",
-    tagline: "Wind, cedar, and mineral salt off a cold coast.",
+    tagline: "A rich, resinous scent of oud and wood.",
     description:
-      "A briny, coastal green scent — cedar and cypress sharpened by sea salt accord, built to feel like standing at the edge of water in early spring.",
+      "A deep, woody scent — oud and sandalwood intertwined with a hint of spice, built to feel like standing in a sun-drenched forest.",
     story:
-      "Named for the tamarisk trees that grow bent and silver along drought-hardened shorelines, Salt Cedar pairs a mineral, almost metallic salt accord with textured cedarwood and a green cypress top. There is no sweetness here — only air and wood.",
+      " oud wood was composed to capture the feeling of aural and olfactory warmth ",
     notes: {
-      top: [{ name: "Sea Salt Accord" }, { name: "Cypress" }, { name: "Bitter Grapefruit" }],
-      heart: [{ name: "Atlas Cedar" }, { name: "Elemi" }, { name: "Violet Leaf" }],
-      base: [{ name: "Ambroxan" }, { name: "Driftwood Accord" }, { name: "Vetiver", latin: "Vetiveria zizanioides" }],
+      top: [{ name: "Cardamom" }, { name: "Pink Pepper" }, { name: "Patchouli" }],
+      heart: [{ name: "Amber" }, ],
+      base: [{ name: "Oud" }, { name: "Tonka Bean" }, ],
     },
     longevity: 3,
     sillage: 2,
@@ -83,82 +108,106 @@ export const products: Product[] = [
     new: true,
     rating: 4.6,
     reviewCount: 154,
+
+    image: "/oudwood.jpg",
+
+    smellmap:["/tuscan.jpg"],
+
+
+
   },
   {
     id: "3",
-    slug: "amber-hour",
-    name: "Amber Hour",
-    family: "Amber",
+    slug: "string",
+    name: "Electric Cherry Eau de Parfum",
+        family: "Floral",
     concentration: "Extrait de Parfum",
     price: 29000,
     size: "50ml",
     accent: "#a8895a",
-    tagline: "The last warm light before dusk, held in resin.",
+    tagline: "Effervescent, floral fruity scent with cherry, white florals and musk.",
     description:
-      "A dense, resinous amber built on labdanum and benzoin, warmed with a trace of cardamom and finished in soft golden vanilla. Rich, but never loud.",
+      "ELECTRIC CHERRY evokes a teasing flirt sparkling with playful effervescence, as the scent of Morello cherry with the warmth of musk combines with sultry jasmine.",
     story:
-      "Amber Hour was composed to hold the particular color of light that appears for about eleven minutes before sunset — the perfumer worked from a single Polaroid taped above the blotting station for the whole development period.",
+      "ELECTRIC CHERRY merges the lush tartness of Morello cherry notes with exhilarating ginger, while opulent jasmine sambac entices with a mesmerizing aroma. Ambrettolide introduces an alluring musk scent, releasing a warm breath that mingles with spicy pink peppercorn.",
     notes: {
-      top: [{ name: "Pink Pepper" }, { name: "Cardamom" }],
-      heart: [{ name: "Labdanum" }, { name: "Benzoin" }, { name: "Saffron" }],
-      base: [{ name: "Vanilla Absolute" }, { name: "Tonka Bean" }, { name: "Amber Resin" }],
+
+      top: [{ name: "Morello Cherry Scenttrek" }, { name: "Pistachio Accord" }],
+      heart: [{ name: "Shimoga Ginger India Orpur" }, { name: "Jasmine Sambac Absolute" }],
+      base: [{ name: "India Orpur" }, { name: "Jasmine Sambac" }, { name: "Sandalwoood" }],
     },
     longevity: 5,
     sillage: 4,
     season: ["Autumn", "Winter"],
     occasion: ["Evening", "Special Occasion"],
-    ingredients: ["Labdanum", "Benzoin", "Vanilla Absolute", "Tonka Bean", "Cardamom", "Saffron"],
+    ingredients: [ "Alcohol Denat.", "Water Aqua Eau", "Fragrance (parfum)"," Limonene", "Hydroxycitronellal", "Linalool", "Benzyl Benzoate", "Coumarin", "Anise Alcohol", "Citral", "Citronellol", "Geraniol", "Benzyl Cinnamate", "Benzyl Alcohol", "Tetramethyl Acetyloctahydronaphthalenes", "Hexadecanolactone", "Lemongrass Oil", "Hexyl Cinnamal", "Citrus Aurantium Bergamia (bergamot) Peel Oil"," Citrus Limon (lemon) Peel Oil", "Benzaldehyde", "Pinene", "Trimethylcyclopentenyl", "Methylisopentenol", "Vanillin", "Rose Ketones", "Trimethylbenzenepropanol", "Farnesol", "Beta-caryophyllene", "Rose Flower Oil/extract", "Terpineol", "Terpinolene", "Alpha Terpinene"],
     bestseller: true,
     featured: true,
     rating: 4.9,
     reviewCount: 487,
+    image: "/Electric cherry.jpg",
+
+    smellmap: ["/tuscan.jpg"],
+
+
+
   },
   {
     id: "4",
-    slug: "white-neroli",
-    name: "White Neroli",
-    family: "Citrus",
+    slug: "cherry-smoke-eau-de-parfum",
+    name: "Cherry Smoke Eau de Parfum",
+    family: "Amber",
     concentration: "Eau de Parfum",
     price: 21000,
     size: "50ml",
     accent: "#c9b190",
-    tagline: "Orange blossom, bleached by sun and salt.",
+    tagline: "A smoldering scent fusing dark cherry, florals and woods.",
     description:
-      "A luminous citrus floral centered on neroli and orange flower absolute, kept crisp with petitgrain and a clean musk so it never tips into sweetness.",
+      "Cherry Smoke plays with fire, bursting with the scent of dark cherry, ignited by seductive osmanthus and smoldering, smoked woods.",
     story:
-      "Distilled from bitter orange blossoms harvested at dawn, this composition aims for translucency rather than richness — the perfumer removed three ingredients late in development simply because the scent felt 'too full.'",
+      "Cherry Smoke opens with the exquisite scent of dark cherry, enhanced by exotic saffron notes. The fragrant white flowers of osmanthus exude facets of apricot, olive, and leather—while a precious smoked wood accord tantalizes with heated vibrancy and a simmering, blazing pull.",
+
     notes: {
-      top: [{ name: "Petitgrain" }, { name: "Blood Orange" }],
-      heart: [{ name: "Neroli", latin: "Citrus aurantium" }, { name: "Orange Flower Absolute" }, { name: "Jasmine Sambac" }],
-      base: [{ name: "White Musk" }, { name: "Cedarwood" }, { name: "Iris" }],
+      top: [{ name: "Dark Cherry Flavor" }, { name: "Smoked Wood Accord," }],
+      heart: [{ name: "Olibanum Somalia Orpur", }, { name: "Peru Balsam Resinoid" }],
+      base: [{ name: "Absolute China Orpur" },  { name:"Cypriol India Orpur"}],
     },
     longevity: 2,
     sillage: 2,
-    season: ["Spring", "Summer"],
-    occasion: ["Daytime", "Everyday"],
+    season: [ "winter"],
+    occasion: [ "night time"],
     ingredients: ["Neroli", "Orange Flower Absolute", "Petitgrain", "Jasmine Sambac", "White Musk", "Iris"],
     featured: true,
     rating: 4.5,
     reviewCount: 201,
+
+image:"/smoke cherry.jpg",
+
+
+          smellmap: ["/tuscan.jpg"],
+
+
+
+
   },
   {
     id: "5",
-    slug: "black-tobacco",
-    name: "Black Tobacco",
-    family: "Woody",
-    concentration: "Extrait de Parfum",
+    slug: "Vanille-Fatale",
+    name: "Vanille Fatale Eau de Parfum",
+    family: "Amber",
+    concentration: "Eau de Parfum",
     price: 27500,
     size: "50ml",
     accent: "#2b2119",
-    tagline: "Dried tobacco leaf, dark rum, and old leather.",
+    tagline: "A beguiling, deeply seductive scent of vanilla resinoid, mahogany wood accord and roasted barley.",
     description:
-      "A dense, masculine-leaning composition of cured tobacco leaf absolute, dark rum accord, and worn leather, grounded in patchouli and oakmoss.",
+      "An unapologetic exploration of vanilla. Vanille Fatale evokes the ingredient’s alter-ego – a beguiling, richly cinematic and deeply seductive scent.",
     story:
       "Built around a rare tobacco leaf absolute sourced from a single small grower, Black Tobacco was formulated in extrait concentration because the perfumer felt any dilution flattened the leather note's texture.",
     notes: {
-      top: [{ name: "Dark Rum Accord" }, { name: "Cinnamon Bark" }],
-      heart: [{ name: "Tobacco Leaf Absolute" }, { name: "Dried Fig" }, { name: "Leather Accord" }],
-      base: [{ name: "Patchouli" }, { name: "Oakmoss" }, { name: "Vanilla" }],
+      top: [{ name: "Safraleine" }, { name: "Frangipani Scenttrek" }],
+      heart: [{ name: "offee Absolute,{name: Mahogany Wood Accord, " }],
+      base: [{ name: " Roasted Barley Orpur " },{name:" Vanilla Resinoid "} ],
     },
     longevity: 5,
     sillage: 4,
@@ -168,25 +217,35 @@ export const products: Product[] = [
     bestseller: true,
     rating: 4.9,
     reviewCount: 398,
+    image:"/vanille fatale.jpg",
+
+
+    smellmap:["/tuscan.jpg"]
+
+
+
+
   },
   {
     id: "6",
-    slug: "milk-musk",
-    name: "Milk Musk",
-    family: "Musk",
+    slug:"myrrhe-mystere",
+    name: "Myrrhe Mystère Eau de Parfum",
+    family: "Woody",
     concentration: "Eau de Parfum",
     price: 20500,
     size: "50ml",
     accent: "#ece3d3",
-    tagline: "Warm skin, clean linen, and soft white musk.",
+    tagline: "A provocative and vibrational expression of the mystical resin myrrh, Myrrhe Mystère captures a richly luminous aura.",
+
+
     description:
-      "A tender, close-to-skin musk built to smell like nothing more than warm, clean skin — a small amount of heliotrope and rice powder give it a faint, milky sweetness.",
+      "Myrrhe Mystère captures a richly luminous aura, unlocking the senses through powerfully grounding myrrh essences and a modern Ultra-Vanille accord.",
     story:
       "Conceived as an 'anti-perfume' — a scent that reads as the wearer's own skin rather than a fragrance layered on top of it. Testing focused entirely on how it aged over eight hours on skin rather than how it smelled from the bottle.",
     notes: {
-      top: [{ name: "Rice Powder Accord" }, { name: "Pear" }],
-      heart: [{ name: "Heliotrope" }, { name: "Orris" }, { name: "Musk Accord" }],
-      base: [{ name: "White Musk" }, { name: "Sandalwood" }, { name: "Vanilla Musk" }],
+      top: [{ name: "Myrrh Duo" }, { name: "Absinthe" }],
+      heart: [{ name: "Sandalwood Album Australia Orpur" }, { name: "Jasmine Absolute Orpur" },],
+      base: [{ name: "Ultra Vanille Accord, Black Leather Accord" }],
     },
     longevity: 2,
     sillage: 1,
@@ -196,11 +255,17 @@ export const products: Product[] = [
     new: true,
     rating: 4.7,
     reviewCount: 88,
+
+    image: "/Myrrhe.jpg",
+
+    smellmap:["/tuscan.jpg"]
+
+
   },
   {
     id: "7",
     slug: "wild-iris",
-    name: "Wild Iris",
+    name: " ",
     family: "Floral",
     concentration: "Eau de Parfum",
     price: 26000,
@@ -223,6 +288,10 @@ export const products: Product[] = [
     ingredients: ["Orris Butter", "Violet Leaf", "Vetiver", "Cedarwood", "Coriander Seed"],
     rating: 4.7,
     reviewCount: 176,
+
+    image:"/tobacco.jpg",
+        smellmap: ["/tuscan.jpg"],
+
   },
   {
     id: "8",
@@ -251,6 +320,11 @@ export const products: Product[] = [
     featured: true,
     rating: 4.6,
     reviewCount: 143,
+    image:"/fab.jpg",
+
+        smellmap: ["/tuscan.jpg"],
+
+
   },
 ];
 
@@ -315,4 +389,11 @@ export const testimonials = [
     name: "S. Whitfield",
     location: "London",
   },
+
+
+
+
+
+
+
 ];

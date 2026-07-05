@@ -7,6 +7,9 @@ import { useStore } from "@/lib/store";
 import { BottleMark } from "@/components/bottle-mark";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
+import Image from "next/image";
+import image from "next/image";
+import { type } from "os";
 
 export default function CartPage() {
   const { cart, removeFromCart, setQuantity, subtotal, discount, couponCode, applyCoupon } = useStore();
@@ -36,9 +39,27 @@ export default function CartPage() {
           <ul className="divide-y divide-line">
             {cart.map((line) => (
               <li key={line.product.id} className="flex gap-6 py-8">
-                <div className="flex h-28 w-24 shrink-0 items-center justify-center bg-cream/60">
-                  <BottleMark accent={line.product.accent} className="h-20 w-auto text-espresso" />
-                </div>
+        
+
+
+
+        <div className="flex h-28 w-24 shrink-0 items-center justify-center bg-cream/60">
+  <Image
+    src={line.product.image}
+    alt={line.product.name}
+    width={120}
+    height={160}
+    className="h-full w-full object-contain"
+  />
+</div>
+  
+
+
+
+
+
+
+
                 <div className="flex flex-1 flex-col justify-between">
                   <div className="flex justify-between gap-4">
                     <div>

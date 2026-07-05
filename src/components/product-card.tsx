@@ -7,10 +7,12 @@ import type { Product } from "@/lib/data";
 import { BottleMark } from "@/components/bottle-mark";
 import { useStore } from "@/lib/store";
 import { cn, formatPrice } from "@/lib/utils";
+import Image from "next/image";
 
 export function ProductCard({ product }: { product: Product }) {
   const { isWishlisted, toggleWishlist } = useStore();
   const wished = isWishlisted(product.id);
+  const cardImage = product.image || "/products/oud5556.jpg";
 
   return (
     <div className="group relative">
@@ -22,7 +24,22 @@ export function ProductCard({ product }: { product: Product }) {
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <BottleMark accent={product.accent} className="h-56 w-auto" />
+      
+            {cardImage ? (
+  <Image
+    src={cardImage}
+    alt={product.name}
+    width={500}
+    height={700}
+    className="h-full w-full object-cover"
+  />
+) : (
+  <BottleMark
+    accent={product.accent}
+    className="h-56 w-auto"
+  />
+)}  
+
           </motion.div>
         </Link>
 

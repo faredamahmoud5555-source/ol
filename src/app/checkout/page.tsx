@@ -8,7 +8,7 @@ import { useStore } from "@/lib/store";
 import { BottleMark } from "@/components/bottle-mark";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
-
+import Image from "next/image";
 const checkoutSchema = z.object({
   email: z.string().email("Enter a valid email address"),
   fullName: z.string().min(2, "Enter your full name"),
@@ -98,9 +98,25 @@ export default function CheckoutPage() {
           <ul className="space-y-5">
             {cart.map((line) => (
               <li key={line.product.id} className="flex items-center gap-4">
-                <div className="flex h-16 w-14 shrink-0 items-center justify-center bg-cream/60">
-                  <BottleMark accent={line.product.accent} className="h-12 w-auto text-espresso" />
-                </div>
+                
+
+<div className="h-28 w-24 shrink-0 overflow-hidden rounded-lg bg-cream/60">
+  <Image
+    src={line.product.image}
+    alt={line.product.name}
+    width={120}
+    height={160}
+    className="h-full w-full object-contain"
+  />
+</div>
+
+
+
+
+
+
+
+
                 <div className="flex flex-1 justify-between text-sm">
                   <span>{line.product.name} &times; {line.quantity}</span>
                   <span>{formatPrice(line.product.price * line.quantity)}</span>
