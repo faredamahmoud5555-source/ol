@@ -70,13 +70,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 
 
+
 />
 
 
 
   </Reveal>
 
-  < SmellMap images={[]} />
+  
+
+ <SmellMap
+  images={product.smellImages.map(
+    (image: string) => `/smell/${product.slug}/${image}`
+  )}
+
+/>
+
 
 
 

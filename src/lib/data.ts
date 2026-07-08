@@ -25,8 +25,8 @@ export type Product = {
   rating: number;
   reviewCount: number;
   image: string;
-  smellmap:string [];
   
+  smellImages: string[];
   
 
 
@@ -47,7 +47,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "1",
-    slug: "smoked-fig",
+    slug: "Tuscan-Leather-Eau-de-Parfum",
     name: "Tuscan Leather Eau de Parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
@@ -76,7 +76,14 @@ export const products: Product[] = [
     reviewCount: 312,
 
     image: "/tuscan.jpg",
-    smellmap:["/tuscan.jpg"]
+
+
+    smellImages: [
+  "amber.jpg",
+  "rasperry.jpg",
+  "saffron.jpg",
+],
+  
     
 
   },
@@ -111,7 +118,11 @@ export const products: Product[] = [
 
     image: "/oudwood.jpg",
 
-    smellmap:["/tuscan.jpg"],
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+],
 
 
 
@@ -146,8 +157,13 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 487,
     image: "/Electric cherry.jpg",
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+],
 
-    smellmap: ["/tuscan.jpg"],
+    
 
 
 
@@ -182,9 +198,14 @@ export const products: Product[] = [
     reviewCount: 201,
 
 image:"/smoke cherry.jpg",
+smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+],
 
 
-          smellmap: ["/tuscan.jpg"],
+          
 
 
 
@@ -219,8 +240,14 @@ image:"/smoke cherry.jpg",
     reviewCount: 398,
     image:"/vanille fatale.jpg",
 
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+],
 
-    smellmap:["/tuscan.jpg"]
+
+    
 
 
 
@@ -258,7 +285,13 @@ image:"/smoke cherry.jpg",
 
     image: "/Myrrhe.jpg",
 
-    smellmap:["/tuscan.jpg"]
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+],
+
+    
 
 
   },
@@ -290,8 +323,13 @@ image:"/smoke cherry.jpg",
     reviewCount: 176,
 
     image:"/tobacco.jpg",
-        smellmap: ["/tuscan.jpg"],
-
+        
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+        
+    ]
   },
   {
     id: "8",
@@ -322,7 +360,12 @@ image:"/smoke cherry.jpg",
     reviewCount: 143,
     image:"/fab.jpg",
 
-        smellmap: ["/tuscan.jpg"],
+    smellImages: [
+  "amber.jpg",
+  "raspberry.jpg",
+  "saffron.jpg",
+    ]
+        
 
 
   },

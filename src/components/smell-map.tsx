@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import gsap from "gsap";
 
 type Props = {
   images: string[];
@@ -10,40 +10,81 @@ type Props = {
 
 export function SmellMap({ images }: Props) {
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
-  function next() {
-    setCurrent((current + 1) % images.length);
-  }
+  const leftTrack = useRef<HTMLDivElement>(null);
+  const centerTrack = useRef<HTMLDivElement>(null);
+  const rightTrack = useRef<HTMLDivElement>(null);
 
-  function prev() {
-    setCurrent((current - 1 + images.length) % images.length);
-  }
+  useLayoutEffect(() => {
+
+
+
+
+
+
+
+
+    setMounted(true);
+  }, []);
+
+
+
+useLayoutEffect(() => {
+  if (!open) return;
+
+  const timer = setTimeout(() => {
+
+    const leftHeight = leftTrack.current!.scrollHeight / 2;
+    const centerHeight = centerTrack.current!.scrollHeight / 2;
+    const rightHeight = rightTrack.current!.scrollHeight / 2;
+
+    gsap.set(leftTrack.current, { y: 0 });
+    gsap.set(centerTrack.current, { y: -centerHeight });
+    gsap.set(rightTrack.current, { y: 0 });
+
+    const leftTween = gsap.to(leftTrack.current, {
+      y: -leftHeight,
+      duration: 30,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        y: gsap.utils.unitize((y) => parseFloat(y) % leftHeight),
+      },
+    });
+
+    const centerTween = gsap.to(centerTrack.current, {
+      y: 0,
+      duration: 30,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        y: gsap.utils.unitize((y) => parseFloat(y) % centerHeight),
+      },
+    });
+
+    const rightTween = gsap.to(rightTrack.current, {
+      y: -rightHeight,
+      duration: 30,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        y: gsap.utils.unitize((y) => parseFloat(y) % rightHeight),
+      },
+    });
+
+  }, 100);
+
+  return () => clearTimeout(timer);
+
+}, [open]);
+
 
   return (
     <>
-      {/* Button */}
-
       <button
         onClick={() => setOpen(true)}
-        className="
-        absolute
-        right-10
-        top-1/2
-        -translate-y-1/2
-        z-20
-        h-28
-        w-28
-        rounded-full
-        bg-[#191822]
-        text-white
-        uppercase
-        tracking-[0.3em]
-        text-xs
-        shadow-xl
-        hover:scale-105
-        transition
-        "
+        className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-28 w-28 rounded-full bg-[#1B1822] text-white uppercase tracking-[0.25em] text-xs shadow-2xl hover:scale-105 transition"
       >
         Click
         <br />
@@ -52,87 +93,89 @@ export function SmellMap({ images }: Props) {
         Smell
       </button>
 
-      {/* FULL SCREEN */}
+      {mounted &&
+        open &&
+        createPortal(
 
-      {open && (
-        <div className="fixed inset-0 z-[9999] bg-black/70">
+<div className="fixed inset-0 z-[999999] bg-[#080808]/92 backdrop-blur-sm">
 
-          {/* Close */}
+            <button
+  onClick={() => setOpen(false)}
+  className="
+    absolute
+    top-6
+    right-6
+    z-[999]
+    flex
+    items-center
+    justify-center
+    w-10
+    h-10
+    text-white
+    text-3xl
+    font-light
+    bg-transparent
+    border-0
+    rounded-none
+    shadow-none
+    hover:opacity-70
+    transition
+  "
+>
+  ×
+</button>
+            
 
-          <button
-            onClick={() => setOpen(false)}
-            className="
-            absolute
-            right-8
-            top-8
-            z-50
-            rounded-full
-            bg-white/10
-            p-3
-            text-white
-            hover:bg-white/20
-            "
-          >
-            <X size={26} />
-          </button>
+            <div className="flex h-screen items-center justify-center">
 
-          {/* Left */}
+              <div className="columns">
 
-          <button
-            onClick={prev}
-            className="
-            absolute
-            left-8
-            top-1/2
-            -translate-y-1/2
-            z-40
-            rounded-full
-            bg-white
-            p-4
-            shadow-xl
-            "
-          >
-            <ChevronLeft />
-          </button>
+                {/* LEFT */}
+                <div className="column">
+                  <div ref={leftTrack} className="track">
 
-          {/* Right */}
+                    {[images[0], images[1], images[0], images[1]].map((img, i) => (
+                      <div className="card" key={i}>
+                        <img src={img} className="card-image" />
+                      </div>
+                    ))}
 
-          <button
-            onClick={next}
-            className="
-            absolute
-            right-8
-            top-1/2
-            -translate-y-1/2
-            z-40
-            rounded-full
-            bg-white
-            p-4
-            shadow-xl
-            "
-          >
-            <ChevronRight />
-          </button>
+                  </div>
+                </div>
 
-          {/* Image */}
+                {/* CENTER */}
+                <div className="column">
+                  <div ref={centerTrack} className="track">
 
-          <div className="flex h-screen items-center justify-center p-20">
+                    {[images[2], images[2]].map((img, i) => (
+                      <div className="card" key={i}>
+                        <img src={img} className="card-image" />
+                      </div>
+                    ))}
 
-            <div className="relative h-full w-full max-w-6xl">
+                  </div>
+                </div>
 
-              <Image
-                src={images[current]}
-                alt=""
-                fill
-                className="object-contain"
-              />
+                {/* RIGHT */}
+                <div className="column">
+                  <div ref={rightTrack} className="track">
+
+                    {[images[1], images[0], images[1], images[0]].map((img, i) => (
+                      <div className="card" key={i}>
+                        <img src={img} className="card-image" />
+                      </div>
+                    ))}
+
+                  </div>
+                </div>
+
+              </div>
 
             </div>
-
-          </div>
-
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 }
+
