@@ -84,7 +84,31 @@ useLayoutEffect(() => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="absolute right-10 top-1/2 -translate-y-1/2 z-20 h-28 w-28 rounded-full bg-[#1B1822] text-white uppercase tracking-[0.25em] text-xs shadow-2xl hover:scale-105 transition"
+      className="
+absolute
+z-20
+rounded-full
+bg-[#1B1822]
+text-white
+uppercase
+tracking-[0.2em]
+shadow-2xl
+transition
+hover:scale-105
+
+w-20 h-20
+text-[12px]
+right-4
+bottom-20
+
+md:w-28
+md:h-28
+md:text-xs
+md:right-10
+md:top-1/2
+md:bottom-auto
+md:-translate-y-1/2
+"
       >
         Click
         <br />

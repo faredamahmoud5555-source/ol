@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Heart } from "lucide-react";
-import { motion } from "framer-motion";
 import type { Product } from "@/lib/data";
 import { BottleMark } from "@/components/bottle-mark";
 import { useStore } from "@/lib/store";
@@ -11,36 +10,33 @@ import Image from "next/image";
 
 export function ProductCard({ product }: { product: Product }) {
   const { isWishlisted, toggleWishlist } = useStore();
+
   const wished = isWishlisted(product.id);
   const cardImage = product.image || "/products/oud5556.jpg";
 
   return (
     <div className="group relative">
       <div className="relative aspect-[3/4] overflow-hidden bg-cream/60">
-        <Link href={`/product/${product.slug}`} className="block h-full w-full">
-          <motion.div
-            className="flex h-full w-full items-center justify-center text-espresso"
-            initial={false}
-            whileHover={{ scale: 1.04 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-      
+        <Link
+          href={`/product/${product.slug}`}
+          className="block h-full w-full"
+        >
+          <div className="flex h-full w-full items-center justify-center text-espresso transition-transform duration-500 group-hover:scale-[1.03]">
             {cardImage ? (
-  <Image
-    src={cardImage}
-    alt={product.name}
-    width={500}
-    height={700}
-    className="h-full w-full object-cover"
-  />
-) : (
-  <BottleMark
-    accent={product.accent}
-    className="h-56 w-auto"
-  />
-)}  
-
-          </motion.div>
+              <Image
+                src={cardImage}
+                alt={product.name}
+                width={500}
+                height={700}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <BottleMark
+                accent={product.accent}
+                className="h-56 w-auto"
+              />
+            )}
+          </div>
         </Link>
 
         <button
@@ -51,7 +47,9 @@ export function ProductCard({ product }: { product: Product }) {
           <Heart
             size={16}
             strokeWidth={1.4}
-            className={cn(wished ? "fill-brass text-brass" : "text-ink")}
+            className={cn(
+              wished ? "fill-brass text-brass" : "text-ink"
+            )}
           />
         </button>
 
@@ -62,13 +60,26 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </div>
 
-      <Link href={`/product/${product.slug}`} className="mt-5 block">
+      <Link
+        href={`/product/${product.slug}`}
+        className="mt-5 block"
+      >
         <div className="flex items-baseline justify-between">
-          <h3 className="font-display text-xl">{product.name}</h3>
-          <span className="text-sm text-ink/60">{formatPrice(product.price)}</span>
+          <h3 className="font-display text-xl">
+            {product.name}
+          </h3>
+          <span className="text-sm text-ink/60">
+            {formatPrice(product.price)}
+          </span>
         </div>
-        <p className="mt-1 text-sm text-ink/55">{product.tagline}</p>
-        <p className="mt-2 text-eyebrow text-ink/40">{product.family}</p>
+
+        <p className="mt-1 text-sm text-ink/55">
+          {product.tagline}
+        </p>
+
+        <p className="mt-2 text-eyebrow text-ink/40">
+          {product.family}
+        </p>
       </Link>
     </div>
   );

@@ -28,11 +28,10 @@ export function ProductSection({
         )}
       </div>
       <div className="grid grid-cols-2 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-        {products.map((p, i) => (
-          <Reveal key={p.id} delay={i * 0.06}>
-            <ProductCard product={p} />
-          </Reveal>
-        ))}
+        {products.map((p) => (
+  <ProductCard key={p.id} product={p} />
+))}
+        
       </div>
     </section>
   );
