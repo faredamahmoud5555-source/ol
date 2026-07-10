@@ -8,6 +8,11 @@ type Props = {
   images: string[];
 };
 
+
+
+
+
+
 export function SmellMap({ images }: Props) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -15,6 +20,24 @@ export function SmellMap({ images }: Props) {
   const leftTrack = useRef<HTMLDivElement>(null);
   const centerTrack = useRef<HTMLDivElement>(null);
   const rightTrack = useRef<HTMLDivElement>(null);
+
+  console.log("SmellMap images:", images);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   useLayoutEffect(() => {
 

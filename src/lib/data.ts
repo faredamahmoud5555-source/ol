@@ -89,8 +89,8 @@ export const products: Product[] = [
   },
   {
     id: "2",
-    slug: "oud-wood-eau-de-parfum",
-    name: "Oud Wood",
+    slug: "oud-wood",
+    name: "Oud-Wood-Eau-de-parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
     price: 22000,
@@ -117,19 +117,17 @@ export const products: Product[] = [
     reviewCount: 154,
 
     image: "/oudwood.jpg",
-
-    smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
-],
-
+smellImages: [
+  "amberr.jpg",
+  "Cardamom.jpg",
+  "tonka.jpg",
+]
 
 
   },
   {
     id: "3",
-    slug: "string",
+    slug: "Electric-Cherry-Eau-de-Parfum",
     name: "Electric Cherry Eau de Parfum",
         family: "Floral",
     concentration: "Extrait de Parfum",
@@ -157,20 +155,23 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 487,
     image: "/Electric cherry.jpg",
-    smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
-],
 
-    
+
+  
+smellImages: [
+  "cherry.jpg",
+  "jasmine.jpg",
+  "sand.jpg",
+]
+
+
 
 
 
   },
   {
     id: "4",
-    slug: "cherry-smoke-eau-de-parfum",
+    slug: "Cherry-Smoke-Eau-de-parfum",
     name: "Cherry Smoke Eau de Parfum",
     family: "Amber",
     concentration: "Eau de Parfum",
@@ -199,9 +200,9 @@ export const products: Product[] = [
 
 image:"/smoke cherry.jpg",
 smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
+  "smoke.jpg",
+  "r.jpg",
+  "yo.jpg",
 ],
 
 
@@ -213,7 +214,7 @@ smellImages: [
   },
   {
     id: "5",
-    slug: "Vanille-Fatale",
+    slug: "Vanille-Fatale-Eau-de-Parfum",
     name: "Vanille Fatale Eau de Parfum",
     family: "Amber",
     concentration: "Eau de Parfum",
@@ -241,9 +242,9 @@ smellImages: [
     image:"/vanille fatale.jpg",
 
     smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
+  "c.jpg",
+  "v.jpg",
+  "pure.jpg",
 ],
 
 
@@ -255,8 +256,8 @@ smellImages: [
   },
   {
     id: "6",
-    slug:"myrrhe-mystere",
-    name: "Myrrhe Mystère Eau de Parfum",
+    slug:"Myrrhe-mystere-Eau-de-Parfum",
+    name: "Myrrhe mystère Eau de Parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
     price: 20500,
@@ -286,9 +287,9 @@ smellImages: [
     image: "/Myrrhe.jpg",
 
     smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
+  "j.jpg",
+  "l.jpg",
+  "s.jpg",
 ],
 
     
@@ -297,22 +298,22 @@ smellImages: [
   },
   {
     id: "7",
-    slug: "wild-iris",
-    name: " ",
-    family: "Floral",
+    slug: "Fucking-Fabulous",
+    name: "Fucking Fabulous Eau de Parfum ",
+    family: "Woody",
     concentration: "Eau de Parfum",
     price: 26000,
     size: "50ml",
     accent: "#8a6a4f",
-    tagline: "Powdery iris root, grown up out of cold earth.",
+    tagline: "An explicit, spicy leather fragrance with an intoxicating grip.",
     description:
-      "An austere, root-forward iris built on orris butter — cool, powdery, and slightly bitter, with none of the sweetness typical of iris fragrances.",
+      "With a name that says it all, Fucking Fabulous is a decadent and spicy leather scent that wields an intoxicating grip.",
     story:
-      "Orris butter is one of the most expensive raw materials in perfumery, requiring roots to age for up to five years before distillation. Wild Iris uses it nearly unadorned, framed only by violet leaf and a dry vetiver base.",
+      "Vibrant clary sage and fresh lavender command attention with aromatic foreplay. Bitter almond and notes of vanilla infuse textural richness to the leather heart, intensified by floral orris accord. Tonka bean drives the scent as amber undertones and blonde woods accords reverberate with a warm glow.",
     notes: {
-      top: [{ name: "Violet Leaf" }, { name: "Coriander Seed" }],
-      heart: [{ name: "Orris Butter", latin: "Iris pallida" }, { name: "Carrot Seed" }],
-      base: [{ name: "Vetiver" }, { name: "Cedarwood" }, { name: "Grey Musk" }],
+      top: [{ name: "Almond" } ],
+      heart: [{ name: "Leather" }],
+      base: [{ name: "Clary Sage Oil" } ],
     },
     longevity: 4,
     sillage: 3,
@@ -322,33 +323,33 @@ smellImages: [
     rating: 4.7,
     reviewCount: 176,
 
-    image:"/tobacco.jpg",
+    image:"/fuck.jpg",
         
     smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
+  "al.jpg",
+  "l.jpg",
+  "vell.jpg",
         
     ]
   },
   {
     id: "8",
-    slug: "copper-vetiver",
-    name: "Copper Vetiver",
+    slug: "wild-iris",
+    name: "Fucking Fabulous Parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
     price: 23500,
     size: "50ml",
     accent: "#b56a4a",
-    tagline: "Dry vetiver root, warmed with red spice.",
+    tagline: "A scent of amber leather glamour at full volume.",
     description:
-      "An earthy, smoky vetiver sharpened with grapefruit and warmed by a red pepper accord — dry, textured, and slightly metallic, like copper left out in the sun.",
+      "Fucking Fabulous Parfum is a declaration of uncensored glamour at full volume. A parfum so fabulous, no other name would do. The fragrance reveals an excess of sensuous leather, warm balsamic notes and rich aromatics for sumptuous depth and desire.",
     story:
       "Sourced from Haitian vetiver root, distilled slowly to preserve its smoky, earthen character. The perfumer added a pepper accord late in development to give the composition a warm, spiced edge without softening the root's dryness.",
     notes: {
-      top: [{ name: "Grapefruit" }, { name: "Pink Peppercorn" }],
-      heart: [{ name: "Vetiver Root", latin: "Vetiveria zizanioides" }, { name: "Nutmeg" }],
-      base: [{ name: "Smoked Woods" }, { name: "Amberwood" }, { name: "Patchouli" }],
+      top: [{ name: "Leather accord" }, { name: "Tonka roasted absolute" }],
+      heart: [{ name: "Fir balsam absolute"}, { name: "Clary sage absolute France" }],
+      base: [{ name: "Orris accord" }, { name: "Cashmeran" }],
     },
     longevity: 4,
     sillage: 3,
@@ -358,12 +359,12 @@ smellImages: [
     featured: true,
     rating: 4.6,
     reviewCount: 143,
-    image:"/fab.jpg",
+    image:"/f2.jpg",
 
     smellImages: [
-  "amber.jpg",
-  "raspberry.jpg",
-  "saffron.jpg",
+  "b.jpg",
+  "l.jpg",
+  "tonka3.jpg",
     ]
         
 

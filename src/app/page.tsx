@@ -1,4 +1,4 @@
-import { Hero } from "@/components/hero";
+
 import Image from "next/image";
 import { ProductSection } from "@/components/product-section";
 import { PhilosophySection } from "@/components/philosophy-section";
@@ -6,6 +6,7 @@ import { IngredientsShowcase } from "@/components/ingredients-showcase";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { NewsletterSection } from "@/components/newsletter-section";
 import { products } from "@/lib/data";
+import  Hero  from "@/components/Hero/Hero";
 
 
 export default function HomePage() {
@@ -14,7 +15,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <Hero />
+    <Hero/>
       <ProductSection
         eyebrow="Featured"
         title="This Season's Selection"

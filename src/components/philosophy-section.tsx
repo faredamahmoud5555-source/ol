@@ -1,33 +1,81 @@
 import { Reveal } from "@/components/reveal";
+import Image from "next/image";
 
 export function PhilosophySection() {
   return (
-    <section className="container-edit py-28 sm:py-36">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-        <Reveal className="lg:col-span-4">
-          <p className="text-eyebrow text-ink/50">Philosophy</p>
+    <section className="container-edit py-36">
+
+      <div className="grid items-center gap-24 lg:grid-cols-2">
+
+        {/* LEFT IMAGE */}
+
+        <Reveal>
+          <div className="flex justify-center">
+  <Image
+    src="/blk.jpg"
+    alt="Editorial"
+    width={1800}
+    height={1200}
+    priority
+    className="w-full max-w-[1600px] h-auto"
+  />
+</div>
+
+
+
+
         </Reveal>
-        <div className="lg:col-span-8">
+
+        {/* RIGHT CONTENT */}
+
+        <div className="max-w-2xl">
+
           <Reveal>
-            <h2 className="font-display text-3xl leading-[1.25] sm:text-4xl lg:text-[2.6rem]">
-              We think of a fragrance the way a tailor thinks of a jacket —
-              made to be worn for years, altered rather than replaced, and
-              judged by how it holds up on the hundredth wearing, not the
-              first.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <p className="mt-10 max-w-xl text-sm leading-relaxed text-ink/60">
-              There is no seasonal calendar here. A composition joins the
-              collection only when it has been worn, revised, and worn again
-              for the better part of a year. We publish the formula&apos;s
-              structure — top, heart, base — on every product page, because
-              we believe transparency about what you are wearing is part of
-              what makes it worth wearing.
+            <p className="text-[11px] uppercase tracking-[0.45em] text-black/40">
+              Philosophy
             </p>
           </Reveal>
+
+          <Reveal delay={0.1}>
+            <h2 className="mt-8 font-display text-6xl leading-[1.05] tracking-[-0.03em]">
+              Crafted slowly.
+              <br />
+              Worn forever.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <p className="mt-10 text-lg leading-9 text-black/60">
+              We believe a fragrance should become part of your identity,
+              not just your collection. Every composition is refined over
+              months until every note feels intentional, balanced, and timeless.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.3}>
+            <div className="mt-14 flex items-center gap-12">
+
+              <div>
+                <p className="text-4xl font-display">25+</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.25em] text-black/50">
+                  Rare Notes
+                </p>
+              </div>
+
+              <div>
+                <p className="text-4xl font-display">100%</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.25em] text-black/50">
+                  Authentic
+                </p>
+              </div>
+
+            </div>
+          </Reveal>
+
         </div>
+
       </div>
+
     </section>
   );
 }
