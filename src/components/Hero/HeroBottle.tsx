@@ -19,19 +19,19 @@ export default function HeroBottle() {
   useEffect(() => {
     if (!bottleRef.current) return;
 
-    gsap.to(bottleRef.current, {
-      y: -12,
-      duration: 2.8,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
+gsap.to(bottleRef.current, {
+  y: -8,
+  duration: 4.5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut",
+});
 
     if (shadowRef.current) {
       gsap.to(shadowRef.current, {
         scaleX: 0.9,
         opacity: 0.18,
-        duration: 2.8,
+       duration: 4.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -73,15 +73,15 @@ export default function HeroBottle() {
     },
   });
 
-  tl.to(
-    bottleRef.current,
-    {
-      opacity: 0,
-      scale: 0.88,
-      rotate: 10,
-      y: -35,
-      duration: 0.35,
-      ease: "power2.in",
+tl.to(
+  bottleRef.current,
+  {
+    opacity: 0,
+    scale: 0.95,
+    rotate: 6,
+    y: -15,
+    duration: 0.55,
+    ease: "power3.inOut",
       onComplete: () => {
         setCurrentIndex((prev) => (prev + 1) % perfumes.length);
       },
@@ -100,33 +100,33 @@ export default function HeroBottle() {
   );
 
   tl.fromTo(
-    bottleRef.current,
-    {
-      opacity: 0,
-      scale: 0.88,
-      rotate: -10,
-      y: 80,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      y: 0,
-      duration: 0.7,
-      ease: "power4.out",
-    }
-  );
+  bottleRef.current,
+  {
+    opacity: 0,
+    scale: 0.96,
+    rotate: -6,
+    y: 20,
+  },
+  {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    y: 0,
+    duration: 1,
+    ease: "expo.out",
+  }
+);
 
-  tl.to(
-    glowRef.current,
-    {
-      scale: 1,
-      opacity: 0.32,
-      duration: 0.6,
-      ease: "power2.out",
-    },
-    "<"
-  );
+tl.to(
+  glowRef.current,
+  {
+    scale: 1.05,
+    opacity: 0.2,
+    duration: 0.5,
+    ease: "power2.out",
+  },
+  0
+);
 };
 
 const handleMouseMove = (
@@ -183,7 +183,7 @@ const handleMouseLeave = () => {
   });
 };
 return (
- <div className="relative flex flex-1 items-center justify-center overflow-hidden">
+<div className="relative flex-[1.15] items-center justify-center overflow-hidden">
   {/* Glow */}
 <div
   ref={glowRef}

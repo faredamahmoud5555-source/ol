@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HeroContent() {
   return (
-    <div className="relative z-20 max-w-[520px] translate-y-3">
+ <div className="relative z-20 w-full lg:w-[45%]">
 
       {/* Heading */}
       <h1 className="font-serif text-[72px] leading-[0.9] tracking-[-0.04em] text-[64px] md:text-[76px] xl:text-[88px]">
