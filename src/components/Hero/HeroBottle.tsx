@@ -183,8 +183,7 @@ const handleMouseLeave = () => {
   });
 };
 return (
-  <div className="relative flex flex-1 items-center justify-center overflow-hidden">
-
+ <div className="relative flex flex-1 items-center justify-center overflow-hidden">
   {/* Glow */}
 <div
   ref={glowRef}

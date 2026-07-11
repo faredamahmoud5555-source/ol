@@ -90,7 +90,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "oud-wood",
-    name: "Oud-Wood-Eau-de-parfum",
+    name: "Oud Wood Eau de parfum",
     family: "Woody",
     concentration: "Eau de Parfum",
     price: 22000,
@@ -160,7 +160,7 @@ smellImages: [
   
 smellImages: [
   "cherry.jpg",
-  "jasmine.jpg",
+  "Jasmine.jpg",
   "sand.jpg",
 ]
 
@@ -334,7 +334,7 @@ smellImages: [
   },
   {
     id: "8",
-    slug: "wild-iris",
+    slug: "Fucking-Ffabulous",
     name: "Fucking Fabulous Parfum",
     family: "Woody",
     concentration: "Eau de Parfum",

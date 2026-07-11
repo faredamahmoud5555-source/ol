@@ -280,7 +280,9 @@ dark
               onClick={() => setSearchOpen(true)}
               className="transition hover:scale-110 hover:text-[#C6A15B]"
             >
-              <Search size={18} />
+              <Search
+  className="h-5 w-5 lg:h-7 lg:w-7 text-neutral-400"
+/>
             </button>
 
             <Link
@@ -360,8 +362,7 @@ dark
 
             {/* TOP */}
 
-            <div className="border-b border-neutral-200 px-8 py-7 lg:px-14">
-
+ <div className="border-b border-neutral-200 px-5 py-5 lg:px-14">
               <div className="flex items-center gap-6">
 
                 <Search
