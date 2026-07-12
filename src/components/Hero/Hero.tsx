@@ -6,7 +6,7 @@ import HeroBottle from "./HeroBottle";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden bg-[#F6F3EE]">
+<section className="relative min-h-[108vh] overflow-hidden bg-[#F6F3EE]">
 
       {/* Background Light */}
       <div
@@ -26,15 +26,19 @@ export default function Hero() {
         }}
       />
 
-      {/* Main Container */}
-     <div className="relative z-10 mx-auto flex h-full flex-col lg:flex-row items-center justify-center lg:justify-between gap-10 lg:gap-28 max-w-[1550px] px-6 md:px-16 lg:px-24">
-        {/* Left */}
-        <HeroContent />
+   <div className="relative z-10 mx-auto flex h-full flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1550px] px-6 md:px-16 lg:px-24">
 
-        {/* Right */}
-        <HeroBottle />
+  {/* Left */}
+  <div className="flex-1">
+    <HeroContent />
+  </div>
 
-      </div>
+  {/* Right */}
+  <div className="flex-[1.45] lg:pl-12">
+    <HeroBottle />
+  </div>
+
+</div>
 
     </section>
   );
