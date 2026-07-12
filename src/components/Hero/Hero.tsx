@@ -26,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-   <div className="relative z-10 mx-auto flex h-full flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1550px] px-6 md:px-16 lg:px-24">
+<div className="relative z-10 mx-auto flex min-h-[108vh] flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1550px] px-6 md:px-16 lg:px-24">
 
   {/* Left */}
   <div className="flex-1">
