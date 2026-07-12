@@ -29,9 +29,9 @@ export default function Hero() {
 <div className="relative z-10 mx-auto flex min-h-[108vh] flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1550px] px-6 md:px-16 lg:px-24">
 
   {/* Left */}
-  <div className="flex-1">
-    <HeroContent />
-  </div>
+<div className="flex-1 pt-16 lg:pt-24">
+  <HeroContent />
+</div>
 
   {/* Right */}
   <div className="flex-[1.45] lg:pl-12">
